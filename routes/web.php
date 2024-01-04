@@ -17,12 +17,12 @@ Route::get('/registration', function () {
 });
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/bingo', function () {
+    Route::get('/project', function () {
         return view('backend.pages.dashboard');
     });
 
     // Dynamic Routes
-    Route::group(['prefix' => 'bingo'], function() {
+    Route::group(['prefix' => 'project'], function() {
         Route::get         ('/{app_type}/{app}/{module}',       'Controller@index'                                              )->name('app');
         Route::get         ('/{app_type}/{app}',                'Controller@direct_app'                                         )->name('direct_app');
     });
