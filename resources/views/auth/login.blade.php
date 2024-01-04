@@ -7,35 +7,13 @@
         <div class="container login">
             <div class="form-section">
                 <div class="row">
-                    <div class="col-md-8 slider-0">
-                        <div class="form-carousel">
-                            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="2000">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                <img class="d-block w-100" src="{{ asset('images/slide-1.png')}}" alt="First slide">
-                                </div>
-                                <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('images/slide-2.png')}}" alt="Second slide">
-                                </div>
-                                <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('images/slide-3.png')}}" alt="Third slide">
-                                </div>
-                                <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('images/slide-4.png')}}" alt="Third slide">
-                                </div>
-                                <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('images/slide-5.png')}}" alt="Third slide">
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 form-0">
+                   
+                    <div class="col-md-12 form-0">
                         <p class="company-logo">
-                            <img src="{{ asset('images/logo.png')}}" class="img-fluid" alt="">
+                            <img style="width: 250px;" src="frontend/images/bingo_logo.jpg" class="img-fluid" alt="">
                         </p>
                         <p class="section-title">
-                            <span>Welcome to Sharp Business Solutions</span>
+                            <span>Welcome to Anytime Bingo</span>
                         </p>
                         <div class="form-1">
                             <p class="form-label">Email</p>
@@ -78,12 +56,10 @@
                         <div class="form-1 register-btn">
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}">
-                                <span>New with ScionTech? Create Account</span>
+                                <span>New with Anytime Bingo? Create Account</span>
                                 </a>
                             @endif
-
                         </div>
-                
                     </div>
                 </div>
             </div>
@@ -100,8 +76,10 @@ html, body {
 .login-container {
     display: flex;
     justify-content: center;
+    background: url("/frontend/images/bg-registration-form-2.jpg");
     align-items: center;
     height: 100%;
+    background-size: cover;
 }
 div#app {
     height: 100% !important;
@@ -118,6 +96,18 @@ span.invalid-feedback {
 }
 .form-control.is-invalid {
     border-color: #ffb100;
+}
+.form-control {
+    /* border: 1px solid; */
+    border-radius: !important;
+    border: 1px solid #232323;
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 0px 20px;
+    border-radius: 20px;
+    font-family: "Muli-Bold";
+    background: none;
 }
 </style>
 @endsection

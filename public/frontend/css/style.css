@@ -49,6 +49,7 @@ a:hover {
 .inner {
   min-width: 850px;
   margin: auto;
+  border-radius: 25px;
   /* padding-top: 68px;
   padding-bottom: 48px; */
   background: url("../images/registration-form-2.jpg"); }
