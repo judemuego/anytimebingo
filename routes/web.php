@@ -12,11 +12,11 @@ use App\Events\FormSubmitted;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['middleware' => ['auth']], function() {
+Route::get('/registration', function () {
+    return view('frontend.registration');
+});
 
-    Route::get('/registration', function () {
-        return view('frontend.registration');
-    });
+Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/bingo', function () {
         return view('backend.pages.dashboard');

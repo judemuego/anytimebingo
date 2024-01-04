@@ -5,7 +5,7 @@
 
 @media (min-width: 1200px) {
     .container.login {
-        max-width: 1400px !important;
+        max-width: 850px !important;
     }
 }
 @media (min-width: 768px) {
@@ -42,12 +42,13 @@ p.section-title {
     text-align: center;
 }
 p.section-title span {
-    color: white;
+    color: #292929;
     font-size: 20px;
 }
-.col-md-4.form-0 {
+.col-md-12.form-0 {
+    border-radius: 25px;
     padding: 0px !important;
-    background: #3282b8;
+    background: url("/frontend/images/registration-form-2.jpg");
     padding-top: 4em !important;
     padding-bottom: 4em !important;
 }
@@ -60,7 +61,7 @@ p.form-label {
     width: 250px;
     margin: auto;
     margin-bottom: 5px;
-    color: white;
+    color: #292929;
     text-transform: uppercase;
 }
 .form-1 {
@@ -89,7 +90,7 @@ p.form-btn button.btn.btn-primary {
     text-align: center;
 }
 .form-1.register-btn a span {
-    color: white !important;
+    color: #292929 !important;
 }
 .form-carousel {
     margin: 4em;
