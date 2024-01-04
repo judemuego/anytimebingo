@@ -109,6 +109,9 @@ span.invalid-feedback {
     font-family: "Muli-Bold";
     background: none;
 }
+.py-4 {
+    padding: 0px !important;
+}
 </style>
 @endsection
 
