@@ -18,13 +18,14 @@ class CreateUsersTable extends Migration
             $table->string('firstname');
             $table->string('middlename')->nullable();
             $table->string('lastname');
-            $table->string('suffix')->nullable();
+            $table->string('birthday');
+            $table->string('contact_no');
             $table->string('email')->unique();
             $table->string('password');
             $table->string('profile_img')->default('default.jpg');
             $table->timestamp('email_verified_at')->nullable();
-            $table->integer('status');
-            $table->integer('workstation_id');
+            $table->integer('status')->default(1);
+            $table->integer('workstation_id')->default(1);
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by');
             $table->integer('deleted_by')->nullable();
@@ -35,25 +36,25 @@ class CreateUsersTable extends Migration
             $table->foreign('created_by')
                 ->references('id')
                 ->on('users');
-                
+
             $table->foreign('updated_by')
                 ->references('id')
                 ->on('users');
         });
 
-        
+
         DB::table('users')->insert([
             [
-                'firstname' => 'Super', 
-                'middlename' => '', 
+                'firstname' => 'Super',
+                'middlename' => '',
                 'lastname' => 'Admin',
                 'suffix' => '',
-                'profile_img' => 'default.jpg', 
-                'email' => 'superadmin@gmail.com', 
-                'status' => '1', 
-                'workstation_id' => 1, 
-                'created_by' => 1, 
-                'updated_by' => 1, 
+                'profile_img' => 'default.jpg',
+                'email' => 'superadmin@gmail.com',
+                'status' => '1',
+                'workstation_id' => 1,
+                'created_by' => 1,
+                'updated_by' => 1,
                 'password' => Hash::make('P@ssw0rd')
             ]
         ]);
