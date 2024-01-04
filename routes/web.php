@@ -12,12 +12,11 @@ use App\Events\FormSubmitted;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/registration', function () {
+    return view('frontend.registration');
+});
+
 Route::group(['middleware' => ['auth']], function() {
-
-    Route::get('/registration', function () {
-        return view('frontend.registration');
-    });
-
     Route::get('/bingo', function () {
         return view('backend.pages.dashboard');
     });
@@ -56,7 +55,7 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/destroy',                        'AppModuleController@destroy'                                   )->name('delete');
             Route::get          ('/list/{id}',                      'AppModuleController@get_list'                                  )->name('list');
         });
-        
+
         Route::group(['prefix' => 'user'], function() {
             Route::get          ('/get',                            'UserController@get'                                            )->name('get');
             Route::post         ('/save',                           'UserController@store'                                          )->name('save');
@@ -65,7 +64,7 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/destroy',                        'UserController@destroy'                                        )->name('delete');
             Route::get          ('/list/{id}',                      'UserController@get_list'                                       )->name('list');
         });
-        
+
         Route::group(['prefix' => 'role'], function() {
             Route::get          ('/get',                            'RoleController@get'                                            )->name('get');
             Route::post         ('/save',                           'RoleController@store'                                          )->name('save');
@@ -74,19 +73,19 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/destroy',                        'RoleController@destroy'                                        )->name('delete');
             Route::get          ('/list/{id}',                      'RoleController@get_list'                                       )->name('list');
         });
-        
+
 
         Route::group(['prefix' => 'activity_log'], function() {
             Route::get          ('/get',                     'Controller@log_get'                                            )->name('get');
         });
-        
+
         Route::group(['prefix' => 'access'], function() {
             Route::get          ('/get_apps/{id}',                  'AccessController@get_apps'                                     )->name('get');
             Route::get          ('/get/{role_id}',                  'AccessController@get_access'                                   )->name('get');
             Route::post         ('/save',                           'AccessController@store'                                        )->name('save');
             Route::post         ('/get_permission',                 'Controller@getPermissionAccess'                                )->name('get');
         });
-        
+
         Route::group(['prefix' => 'role_setup'], function() {
             Route::post         ('/save',                           'RoleSetupController@store'                                     )->name('save');
             Route::get          ('/list/{id}',                      'RoleSetupController@get_list'                                  )->name('list');
