@@ -17,6 +17,9 @@
 		<div class="wrapper" style="background-image: url('frontend/images/bg-registration-form-2.jpg');">
 			<div class="inner">
 				<form action="">
+                    <div class="form-logo">
+                        <img style="width: 250px;" src="frontend/images/bingo_logo.jpg" alt="">
+                    </div>
 					<h3>Registration Form</h3>
 					<div class="form-group">
 						<div class="form-wrapper">
